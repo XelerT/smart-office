@@ -46,14 +46,7 @@ type Email struct {
 	Pass *string `mapstructure:"pass"`
 }
 
-// Oauth configures OAuth secrets.
-type Oauth struct {
-	YandexSecret string `mapstructure:"yandex_secret"`
-	VkID         string `mapstructure:"vk_id"`
-	VkSecret     string `mapstructure:"vk_secret"`
-}
-
-// Telegram configures Telegram bot settings (uses pointers for conditional enabling).
+// Telegram configures Telegram bot settings
 type Telegram struct {
 	ChatID *int    `mapstructure:"chat_id"`
 	Token  *string `mapstructure:"token"`
@@ -84,7 +77,6 @@ type Config struct {
 
 	Mongo    Mongo    `mapstructure:"mongo"`
 	Email    Email    `mapstructure:"email"`
-	Oauth    Oauth    `mapstructure:"oauth"`
 	Telegram Telegram `mapstructure:"telegram"`
 	Agenda   Agenda   `mapstructure:"agenda"`
 	API      API      `mapstructure:"api"`
